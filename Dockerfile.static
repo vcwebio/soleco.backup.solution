@@ -1,0 +1,34 @@
+##### BEGIN modeco/Dockerfile/image-header #####
+FROM vcwebio/conteco.image.wrapper AS base
+##### END modeco/Dockerfile/image-header #####
+
+##### BEGIN image/Dockerfile/conteco #####
+COPY ./conteco/ /conteco/
+RUN chmod -R +x /conteco/bin && rm -rf /conteco/repo
+COPY ./ /conteco/repo/
+##### END image/Dockerfile/conteco #####
+
+##### BEGIN image/Dockerfile/build-instructions #####
+ENV CONTECO_ENTRYPOINT "bash"
+##### END image/Dockerfile/build-instructions #####
+
+##### BEGIN image.base/Dockerfile/env-labels-footer #####
+ENV CONTECO_REALM="vcwebio" \
+    CONTECO_ECOSYSTEM="soleco" \
+    CONTECO_TYPE="backup" \
+    CONTECO_NAME="solution" \
+    CONTECO_TAG="20200704" \
+    CONTECO_BASE="image.wrapper" \
+    CONTECO_BUILD="modeco"
+LABEL io.vcweb.schema-version="1.0" \
+      io.vcweb.realm="vcwebio" \
+      io.vcweb.ecosystem="soleco" \
+      io.vcweb.type="backup" \
+      io.vcweb.name="solution" \
+      io.vcweb.tag="20200704" \
+      io.vcweb.base="image.wrapper" \
+      io.vcweb.build="modeco" \
+      io.vcweb.label="backup.solution - SolEco" \
+      io.vcweb.description="Backup of all repositories of the solution images of the SolEco ecosystem." \
+      io.vcweb.docker.cmd.help="docker run vcwebio/soleco.backup.solution --help"
+##### END image.base/Dockerfile/env-labels-footer #####

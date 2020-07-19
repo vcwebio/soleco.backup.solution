@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+export CONTECO_LABEL="backup.solution - SolEco"
+export CONTECO_DESCRIPTION="Backup of all repositories of the solution images of the SolEco ecosystem."
+
+export CONTECO_TYPE="backup"
+export CONTECO_NAME="solution"
+export CONTECO_TAG="20200719"
+
+export CONTECO_BASE="image.wrapper"
+export CONTECO_BUILD="modeco"
