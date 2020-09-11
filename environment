@@ -5,7 +5,7 @@ export CONTECO_DESCRIPTION="Backup of all repositories of the solution images of
 
 export CONTECO_TYPE="backup"
 export CONTECO_NAME="solution"
-export CONTECO_TAG="20200719"
+export CONTECO_TAG="20200904"
 
 export CONTECO_BASE="image.wrapper"
 export CONTECO_BUILD="modeco"
